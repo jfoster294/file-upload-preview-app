@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>File Upload Preview App | Joel Foster</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <nav class="top-nav">
+        <a href="https://jfoster294.github.io/portfolio-site/" class="back-link">← Portfolio</a>
+        <p>File Upload Preview App</p>
+      </nav>
+
+      <section class="hero-content">
+        <p class="eyebrow">Upload Interface</p>
+        <h1>Preview files before submission.</h1>
+        <p>
+          Drag and drop files, preview images, check file details,
+          validate uploads, remove files, and review upload stats.
+        </p>
+      </section>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <p>Total Files</p>
+        <h2 id="totalFiles">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <p>Images</p>
+        <h2 id="imageFiles">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <p>Total Size</p>
+        <h2 id="totalSize">0 MB</h2>
+      </article>
+
+      <article class="stat-card">
+        <p>Rejected</p>
+        <h2 id="rejectedFiles">0</h2>
+      </article>
+    </section>
+
+    <section class="upload-layout">
+      <section class="upload-card">
+        <h2>Upload Files</h2>
+
+        <div id="dropZone" class="drop-zone">
+          <div class="upload-icon">☁️</div>
+
+          <h3>Drag files here</h3>
+
+          <p>
+            Or click the button below to choose files from your device.
+          </p>
+
+          <input
+            type="file"
+            id="fileInput"
+            multiple
+            accept="image/*,.pdf,.txt,.doc,.docx"
+            hidden
+          />
+
+          <button id="chooseFilesButton" class="primary-button" type="button">
+            Choose Files
+          </button>
+        </div>
+
+        <div class="rules-box">
+          <h3>Accepted Files</h3>
+
+          <ul>
+            <li>Images: JPG, PNG, GIF, WEBP</li>
+            <li>Documents: PDF, TXT, DOC, DOCX</li>
+            <li>Maximum file size: 5 MB each</li>
+          </ul>
+        </div>
+
+        <div id="errorBox" class="error-box hidden"></div>
+      </section>
+
+      <section class="preview-card">
+        <div class="preview-header">
+          <div>
+            <h2>File Previews</h2>
+            <p id="previewMessage">No files selected yet.</p>
+          </div>
+
+          <button id="clearAllButton" class="danger-button" type="button">
+            Clear All
+          </button>
+        </div>
+
+        <div id="previewGrid" class="preview-grid"></div>
+
+        <section id="emptyState" class="empty-state">
+          <h3>No previews yet</h3>
+          <p>Add files to see previews and file details here.</p>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
